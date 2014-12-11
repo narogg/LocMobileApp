@@ -1,48 +1,45 @@
+<style>
+.scroll-content {
+    background: url(/img/nyc.jpg) ;
+ }
+</style>
 
 <ion-view title="Postavke" >
 
   <ion-content class="padding" ng-controller="DashCtrl">
-  <!-- if ng-model="localEmail" exists don't show the below form-->
-  
-  <div class="card">
-  <div class="item item-text-wrap ">
-  <div ng-if="localEmail">Prijavljeni ste kao <strong>{{localEmail}}</strong>. Nema potrebe za izmjenama.</div>
-  <div ng-if="!localEmail">Niste prijavljeni! Ako ste prvi put ovdje Registrirajte se. Ako ste to vec napravili, prijavite se s Vasim emailom. </div>
+   </br> 
+  <!-- if ng-model="localEmail" exists don't show the below form
+  <div class="light" ng-if="localEmail">Prijavljeni ste kao <strong>{{localEmail}}</strong> </br>Nema potrebe za izmjenama.</div></br>
+  <div class="assertive" ng-if="!localEmail">Niste prijavljeni! Ako ste prvi put ovdje Registrirajte se. </br>Ako ste to vec napravili, prijavite se s Vasim emailom. </div></br>
+  -->
+  <div class="card ">
+	<div class="item item-text-wrap">
+		<div class="dark" ng-if="localEmail">Prijavljeni ste kao <strong>{{localEmail}}</strong>. Nema potrebe za izmjenama.</div>
+		<div class="assertive" ng-if="!localEmail">Niste prijavljeni!</br> Ako ste prvi put ovdje Registrirajte se.</br> Ako ste to vec napravili, prijavite se s Vasim emailom. </div>
+	</div>
   </div>
-</div>
-  
-  
-  
+  </br></br>
+     
 	<div class="list">
-		<div ng-show="login_error.message" class="positive">
-			<p>{{login_error.message}}</p>
+		<div ng-show="login_error.message" class="assertive">
+			<p><strong>{{login_error.message}}</strong></p>
 		</div>
 
 	<label class="item item-input" ng-class="{positive: login_error.errors.email}">
-		<input type="text" ng-model="login_user.email" placeholder="Email" value="{{localEmail}}">
-		
+		<input type="text" ng-model="login_user.email" placeholder="Email" value="{{localEmail}}">		
 		<div ng-show="login_error.errors.email">
 		<div ng-repeat="field_error in login_error.errors.email">{{field_error}}</div>
 		</div>
 	</label>
-	
 
-	
-	
 	<label class="item item-input" ng-class="{positive: login_error.errors.password}">
 		<input type="password" ng-model="login_user.password" placeholder="Password">
 		<div ng-show="login_error.errors.password">
 		<div ng-repeat="field_error in login_error.errors.password">{{field_error}}</div>
 		</div>
 	</label>
-	<!--
-	<label class="item item-input">
-		<input type="text" placeholder="Ime">
-	</label>
-	-->
 	</div>
 	
-	 <!--div od ng-if-a-->
 	</br>
 	<!-- if there exists window.localStorage['id'] then there is no need for signup (registriraj)-->
 
@@ -54,8 +51,5 @@
 		Registriraj
 	</button>
 
-
-	
-	
   </ion-content>
 </ion-view>

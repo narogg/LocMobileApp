@@ -66,7 +66,7 @@ angular.module('starter.controllers', [])
 			 //if(!!localStorage.getItem('id')){
 				window.localStorage['id'] = data.id;
 				window.localStorage['email'] = data.email;
-				alert('Hello, ' + data.email +' with ID of: '+data.id);
+				//alert('Hello, ' + data.email +' with ID of: '+data.id);
 			//};			
 			
 			
